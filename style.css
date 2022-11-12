@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono");
+
+body {
+  background: #f0f0f0;
+  font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen-Sans,Ubuntu,Cantarell,helvetica neue,sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
+nav {
+  display:flex;
+  justify-content: space-between;
+  height: 30px;
+  width: 100%;
+  border-bottom: 1px solid #dedede;
+  margin: 0 auto 17px auto;
+  background-color: white;
+}
+
+.logo{
+  margin-left: 2.5%;
+}
+
+p{
+  margin: 5px auto 5px auto;
+}
+
+.side-button{
+  margin-right:2.5%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group{
+  border: 1px solid #d9d9d9;
+}
+
+@media screen and (max-height: 375px) {
+  body {
+    position: relative;
+    overflow: auto;
+  }
+}
+
+.card {
+  width: 95%;
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+    width: 95%;
+  }
+}
+
+#editorWrapper {
+  position: relative;
+  height: 100%;
+  min-height: 80vh;
+}
+
+@media (min-height: 600px) {
+  #editorWrapper {
+    height: 55vh;
+  }
+}
+
+@media (min-height: 900px) {
+  #editorWrapper {
+    height: 65vh;
+  }
+}
+
+#editorWrapper #editor {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.btn {
+  background-color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border: 1px solid #e1e1e1;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen-Sans, Ubuntu, Cantarell, helvetica neue, sans-serif;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+button[type=submit]{
+  margin:20px 10px 0 0;
+}
+
+button[type=reset]{
+  margin-top:20px;
+}
+
+.compress{
+  float: right;
+}
+
+button[type=compress]{
+  margin-top:20px;
+}

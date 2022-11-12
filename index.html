@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <p><b>JSONParser</b> - The JSON validator</p>
+        </div>
+        <!-- <div class="side-button">
+            <button class="btn" type="compress" id="minify">Other Products</button>
+        </div> -->
+    </nav>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <div id="editorWrapper">
+                    <div id="editor"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <button class="btn" type="submit" id="beautify">Validate JSON</button>
+                    <button class="btn" type="reset" id="clear">Clear</button>
+                </div>
+                <div class="compress">
+                    <button class="btn" type="compress" id="minify">Compress JSON</button>
+                </div>
+            </div>
+            <div class="info">
+                <h2>What Is JSON?</h2>
+                <p>JSON (pronounced as Jason), stands for "JavaScript Object Notation," is a human-readable and compact
+                    solution to represent a complex data structure and facilitate data interchange between systems. It's
+                    a widespread data format with a diverse range of applications enabled by its simplicity and
+                    semblance to readable text. As such, it's used by most but not all systems for communicating data.
+                </p>
+                <h2>Why Use JSON?</h2>
+                <p>There are several reasons why you should consider using JSON, the key reason being that JSON is
+                    independent of your system's programming language, despite being derived from JavaScript. Not only
+                    is JSON language-independent, but it also represents data that speaks common elements of many
+                    programming languages, effectively making it into a universal data representation understood by all
+                    systems.</p>
+                <p>Other reasons include:</p>
+                <ul>
+                    <li>Readability – JSON is human-readable, given proper formatting.</li>
+                    <li>Compactness – JSON data format doesn't use a complete markup structure, unlike XML.</li>
+                    <li>It's easy to analyze into logical syntactic components, especially in JavaScript.</li>
+                    <li>Countless JSON libraries are available for most programming languages.</li>
+                </ul>
+                <h4>More about json at <a href="https://www.json.org/">json.org</a></h4>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js"></script>
+    <script src="app.js" async defer></script>
+</body>
+
+</html>
