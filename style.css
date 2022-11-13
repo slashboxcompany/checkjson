@@ -48,6 +48,26 @@ img{
   justify-content: space-between;
 }
 
+#error{
+  display:none;
+  border: 1px solid transparent;
+  margin: 1em 0;
+  padding: 0.5em;
+  background: #fbe3e4;
+  color: #d12f19;
+  border-color: #fbc2c4;
+}
+
+#valid-state{
+  display:none;
+  border: 1px solid transparent;
+  margin: 1em 0;
+  padding: 0.5em;
+  background: #e6efc2;
+  color: #529214;
+  border-color: #c6d880;
+}
+
 .form-group{
   border: 1px solid #d9d9d9;
 }

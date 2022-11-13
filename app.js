@@ -7,30 +7,51 @@ const editor = ace.edit('editor', {
 
 const formatText = (spacing = 0) => {
   try {
-    const current = JSON.parse(editor.getValue())
-    editor.setValue(JSON.stringify(current, null, spacing))
-    editor.focus()
-    editor.selectAll()
-    document.execCommand('copy')
+    returnOriginalValue()
+    if (editor.getValue() !== '') {
+      const current = JSON.parse(editor.getValue())
+      editor.setValue(JSON.stringify(current, null, spacing))
+      editor.focus()
+      editor.selectAll()
+      if (spacing !== 0) validState()
+    }
   } catch (err) {
-    alert('ERROR: Unable to parse text as JSON')
+    error()
   }
 }
 
 editor.on('paste', (event) => {
   try {
+    returnOriginalValue()
     event.text = JSON.stringify(JSON.parse(event.text), null, 4)
+    validState()
   } catch (err) {
-    // meh
+    error()
   }
 })
 
 const clearText = () => {
-  try{
+  try {
+    returnOriginalValue()
     editor.setValue(null)
-  } catch(err) {
+  } catch (err) {
     //
   }
+}
+
+const validState = () => {
+  var x = document.getElementById("valid-state");
+  x.style.display = "block";
+}
+
+const error = () => {
+  var x = document.getElementById("error");
+  x.style.display = "block";
+}
+
+const returnOriginalValue = () => {
+  document.getElementById("error").style.display = "none";
+  document.getElementById("valid-state").style.display = "none"
 }
 
 document.getElementById('minify').addEventListener('click', () => formatText())
