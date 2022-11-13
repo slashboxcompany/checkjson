@@ -25,11 +25,18 @@ nav {
 }
 
 .logo{
+  display: flex;
   margin-left: 2.5%;
 }
 
 p{
   margin: 5px auto 5px auto;
+}
+
+.img{
+  width: 28px;
+  padding: 1px;
+  margin-right: 10px;
 }
 
 .side-button{
