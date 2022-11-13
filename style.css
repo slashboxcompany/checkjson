@@ -36,6 +36,7 @@ p{
 img{
   width: 28px;
   padding: 1px;
+  border-radius: 25%;
   margin-right: 10px;
 }
 
