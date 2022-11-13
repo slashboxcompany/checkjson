@@ -15,7 +15,7 @@ const formatText = (spacing = 0) => {
       editor.selectAll()
       if (spacing !== 0) validState()
     } else {
-      alert('Bro, I think you need tutorials to how to use this thing.')
+      alert('I think you need tutorials to how to use this thing.')
     }
   } catch (err) {
     error()
