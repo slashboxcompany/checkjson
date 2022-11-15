@@ -150,7 +150,7 @@ img{
 }
 
 #editorWrapper #editor {
-  font-family: 'Roboto Mono', monospace;
+  font-family: monospace;
   font-size: 14px;
   position: absolute;
   top: 0;
