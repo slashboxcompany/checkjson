@@ -12,6 +12,7 @@ const editor = ace.edit("editor", {
             error()
         }
     };
+editor.focus();
 editor.on("paste", e => {
     try {
         returnOriginalValue(), e.text = JSON.stringify(JSON.parse(e.text), null, 4), validState()
@@ -39,5 +40,5 @@ const clearText = () => {
         document.getElementById("error").style.display = "none", document.getElementById("valid-state").style.display = "none"
     };
 document.getElementById("minify").addEventListener("click", () => formatText()),
-document.getElementById("beautify").addEventListener("click", () => formatText(4)),
-document.getElementById("clear").addEventListener("click", () => clearText());
+    document.getElementById("beautify").addEventListener("click", () => formatText(4)),
+    document.getElementById("clear").addEventListener("click", () => clearText());
