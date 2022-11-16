@@ -22,7 +22,7 @@ editor.on("paste", e => {
 });
 const clearText = () => {
     try {
-        returnOriginalValue(), editor.setValue(null)
+        returnOriginalValue(), editor.setValue(null), editor.focus()
     } catch (e) { }
 },
     validState = () => {
