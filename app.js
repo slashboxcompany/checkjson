@@ -2,7 +2,11 @@ const editor = ace.edit("editor", {
     mode: "ace/mode/json",
     selectionStyle: "text",
     showPrintMargin: !1,
-    theme: "ace/theme/chrome"
+    theme: "ace/theme/chrome",
+    highlightActiveLine: false,
+    cursorStyle: 'slim',
+    highlightGutterLine: false,
+    fontSize: 14
 }),
     formatText = (e = 0) => {
         try {
