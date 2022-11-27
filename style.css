@@ -2,6 +2,8 @@
 
 html {
   --color-background : #f0f0f0;
+  --color-background-text : black;
+  --color-background-text-headers : black;
   --color-nav-background : white;
   --color-nav-border : #dedede;
   --color-error-background : #fbe3e4; 
@@ -14,28 +16,33 @@ html {
   --color-button-background : #fff;
   --color-button-border : #e1e1e1;
   --color-button-text : #333;
+  --color-button-text-hover : black;
   --color-button-background-hover : rgb(237, 237, 237);
 }
 
 html[data-theme='dark']{
-  --color-background : #1e2022;
-  --color-nav-background : rgb(21, 21, 21);
-  --color-nav-border : #dedede;
-  --color-error-background : #fcd2d4; 
-  --color-error-text : red;
-  --color-error-border : #fb9fa2;
-  --color-valid-background : #dbec99;
-  --color-valid-text : green;
-  --color-valid-border : #8aa031;
+  --color-background : #232629;
+  --color-background-text : #aab3bd;
+  --color-background-text-headers : #c9d1d9;
+  --color-nav-background : #232222;
+  --color-nav-border : #343131;
+  --color-error-background : #61191d; 
+  --color-error-text : #ff9c9c;
+  --color-error-border : #944346;
+  --color-valid-background : #273202;
+  --color-valid-text : lime;
+  --color-valid-border : #4d5629;
   --color-editor-border : #343131;
-  --color-button-background : rgb(54, 49, 49);
-  --color-button-border : #393939;
-  --color-button-text : rgb(226, 226, 226);
-  --color-button-background-hover : rgb(37, 34, 34);
+  --color-button-background : rgb(254 227 51/5%);
+  --color-button-border : none;
+  --color-button-text : #fee333;
+  --color-button-text-hover : black;
+  --color-button-background-hover : #fee333;
 }
 
 body {
   background: var(--color-background);
+  color : var(--color-background-text);
   font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen-Sans,Ubuntu,Cantarell,helvetica neue,sans-serif;
   display: flex;
   flex-direction: column;
@@ -73,8 +80,8 @@ p span {
 }
 
 img{
-  width: 28px;
-  padding: 1px;
+  width: 27px;
+  padding: 2px;
   border-radius: 25%;
   margin-right: 10px;
 }
@@ -151,7 +158,7 @@ img{
 
 #editorWrapper #editor {
   font-family: monospace;
-  font-size: 14px;
+  font-size: 15px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -169,10 +176,12 @@ img{
   font-weight: 700;
   color: var(--color-button-text);
   cursor: pointer;
+  border-radius: 3px;
 }
 
 .btn:hover {
   background-color: var(--color-button-background-hover);
+  color: var(--color-button-text-hover)
 }
 
 button[type=submit]{
@@ -189,4 +198,8 @@ button[type=reset]{
 
 button[type=compress]{
   margin-top:20px;
+}
+
+.info h3 {
+  color: var(--color-background-text-headers);
 }
