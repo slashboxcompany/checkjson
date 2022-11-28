@@ -11,7 +11,7 @@ const editor = ace.edit("editor", {
     formatText = (e = 0) => {
         try {
             var t;
-            returnOriginalValue(), "" !== editor.getValue() ? (t = JSON.parse(editor.getValue()), editor.setValue(JSON.stringify(t, e)), editor.focus(), editor.selectAll(), 0 !== e && validState()) : alert("I think you are not clear about your goals.")
+            returnOriginalValue(), "" !== editor.getValue() ? (t = JSON.parse(editor.getValue()), editor.setValue(JSON.stringify(t,null, e)), editor.focus(), editor.selectAll(), 0 !== e && validState()) : alert("I think you are not clear about your goals.")
         } catch (e) {
             error()
         }
