@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight");
 
 html {
-  --color-background : #f0f0f0;
+  --color-background : #fafbfc;
   --color-background-text : black;
   --color-background-text-headers : black;
   --color-nav-background : white;
-  --color-nav-border : #dedede;
+  --color-nav-border : #f0f0f0;
   --color-error-background : #fbe3e4; 
   --color-error-text : #d12f19;
   --color-error-border : #fbc2c4;
@@ -71,12 +71,22 @@ nav {
   margin-left: 2.5%;
 }
 
-p{
+p {
   margin: 3px auto 3px auto;
 }
 
+.heading {
+  font-size: 13px;
+  font-weight: 700;
+  float: left;
+  margin: 0;
+}
+
 p span {
-  font: 0.95em andale mono,monotype,lucida console,monospace
+  font-size: 13px;
+  font-weight:400;
+  float: left;
+  margin: 0;
 }
 
 img{
@@ -159,6 +169,7 @@ img{
 #editorWrapper #editor {
   font-family: monospace;
   font-size: 15px;
+  border: 1px solid #fafafa;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -189,6 +200,7 @@ button[type=submit]{
 }
 
 button[type=reset]{
+  background-color: #f4f4f4;
   margin-top:20px;
 }
 
@@ -202,4 +214,18 @@ button[type=compress]{
 
 .info h3 {
   color: var(--color-background-text-headers);
+}
+
+.ace-chrome .ace_gutter {
+  color: #838383 !important;
+  background: #f7f7f7 !important;
+}
+
+.ace_content {
+  border-left: 1.5px solid #dbdbdb;
+  /* padding: 4px 0; */
+}
+
+.ace_gutter {
+  /* padding: 4px 0; */
 }
