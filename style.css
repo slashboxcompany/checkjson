@@ -157,6 +157,30 @@ img{
   }
 }
 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-color: #e8e8e8; /* Background color */
+  overflow-x: hidden;
+  transition: 0.5s; /* 0.5 second transition for smooth open/close effect */
+  padding-top: 0px; /* Add padding to avoid content overlaying the panel */
+}
+
+.sidenav h2 {
+  color: #fff;
+  margin: 0;
+  text-align: center;  
+}
+
+.heading-container {
+  background-color: #333; /* Background color for the heading container */
+  padding: 16px; /* Padding around the heading container */
+}
+
 .card {
   width: 97%;
 }
@@ -186,6 +210,24 @@ img{
   #editorWrapper {
     height: 65vh;
   }
+}
+
+#historyList li:hover {
+  background-color: #333232;
+  cursor: pointer;
+}
+#historyList li {
+  width: 340px; /* Set a fixed width for each list item */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide content that overflows the fixed width */
+  text-overflow: ellipsis; /* Show ellipsis for hidden content */
+  padding: 7px; /* Optional: add padding for better appearance */
+  margin-bottom: 7px; /* Optional: add margin between list items */
+}
+
+#historyList {
+  list-style-type: none;
+  padding: 0; /* Optional: remove default padding */
 }
 
 #editorWrapper #editor {
