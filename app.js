@@ -121,12 +121,14 @@ function openHistoryPanel() {
     var historyPanel = document.getElementById("historyPanel");
     historyPanel.style.width = "350px";
     historyPanel.classList.add("show");
+    document.getElementById("closeBtn").style.display = 'block';
 }
 
 function closeHistoryPanel() {
     var historyPanel = document.getElementById("historyPanel");
     historyPanel.style.width = "0";
     historyPanel.classList.remove("show");
+    document.getElementById("closeBtn").style.display = 'none';
 }
 
 function toggleHistoryPanel(event) {
@@ -144,6 +146,9 @@ function toggleHistoryPanel(event) {
 
 var historyButton = document.getElementById("history");
 historyButton.addEventListener("click", toggleHistoryPanel);
+
+var closeButton = document.getElementById("closeBtn");
+closeButton.addEventListener("click",closeHistoryPanel)
 
 document.addEventListener("click", function (event) {
     var historyPanel = document.getElementById("historyPanel");
