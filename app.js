@@ -130,6 +130,8 @@ function populateSidebar() {
 
 function handleClick(item) {
     editor.setValue(JSON.stringify(JSON.parse(item)))
+    formatText(4)
+    validState()
     closeHistoryPanel()
 }
 
