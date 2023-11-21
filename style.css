@@ -163,21 +163,38 @@ img{
   position: fixed;
   z-index: 5;
   top: 0;
-  left: 0;
-  background-color: #e8e8e8; /* Background color */
+  right: 0;
+  background-color: white; /* Background color */
   overflow-x: hidden;
-  transition: 0.5s; /* 0.5 second transition for smooth open/close effect */
-  padding-top: 0px; /* Add padding to avoid content overlaying the panel */
+  transition: 0.2s; /*transition for smooth open/close effect */
+  border-style: double;
+  border-color: aliceblue;
+  border-left-width: thin;
+}
+
+.scrollable-list {
+  padding: 0; 
+  margin: 0; 
+  list-style-position: inside; 
+} 
+
+.sidenav-list {
+  position: fixed;
+  overflow-y: scroll;
+  max-height: 525px;
+  padding: 0;
+  margin: 0;
 }
 
 .sidenav h2 {
-  color: #fff;
+  color: #070707;
   margin: 0;
-  text-align: center;  
+  text-align: center; 
+  font-size: medium; 
 }
 
 .heading-container {
-  background-color: #333; /* Background color for the heading container */
+  background-color: #f7f7f7; /* Background color for the heading container */
   padding: 16px; /* Padding around the heading container */
 }
 
@@ -213,7 +230,7 @@ img{
 }
 
 #historyList li:hover {
-  background-color: #333232;
+  background-color: #f7f7f7;
   cursor: pointer;
 }
 #historyList li {
@@ -225,8 +242,17 @@ img{
   margin-bottom: 7px; /* Optional: add margin between list items */
 }
 
+#historyList li {
+  position: relative;
+  padding-left: 20px;
+}
+
+#historyList li:before {
+  position: absolute;
+  left: 0;
+}
+
 #historyList {
-  list-style-type: none;
   padding: 0; /* Optional: remove default padding */
 }
 
@@ -243,7 +269,8 @@ img{
 
 .btn {
   background-color: var(--color-button-background);
-  padding: 10px 15px;
+  padding: 4px 10px;
+  margin-top: 3px;
   text-decoration: none;
   border: 1px solid var(--color-button-border);
   font-size: 14px;
@@ -251,6 +278,27 @@ img{
   font-weight: 700;
   color: var(--color-button-text);
   cursor: pointer;
+}
+
+.closeBtn {
+  background-color: #f4f4f4;
+  padding: 4px 10px;
+  margin-top: 3px;
+  text-decoration: none;
+  border: 1px solid var(--color-button-border);
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen-Sans, Ubuntu, Cantarell, helvetica neue, sans-serif;
+  font-weight: 700;
+  color: var(--color-button-text);
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px;
+  right: 145px;
+}
+
+.closeBtn:hover {
+  background-color: var(--color-button-background-hover);
+  color: var(--color-button-text-hover)
 }
 
 .btn:hover {
