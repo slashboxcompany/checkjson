@@ -169,6 +169,15 @@ img{
   transition: 0.2s; /*transition for smooth open/close effect */
   border-color: aliceblue;
   border: 1px solid var(--color-nav-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.sidenavcard {
+  background-color:#e4efc3; /* Set card background color */
+  border: 1px solid #ddd; /* Add a border around the card */
+  border-radius: 4px; /* Add rounded corners */
+  padding: 16px;
 }
 
 .scrollable-list {
