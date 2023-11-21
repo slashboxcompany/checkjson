@@ -167,9 +167,8 @@ img{
   background-color: white; /* Background color */
   overflow-x: hidden;
   transition: 0.2s; /*transition for smooth open/close effect */
-  border-style: double;
   border-color: aliceblue;
-  border-left-width: thin;
+  border: 1px solid var(--color-nav-border);
 }
 
 .scrollable-list {
