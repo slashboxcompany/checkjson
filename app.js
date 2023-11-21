@@ -1,19 +1,31 @@
 class FixedSizeQueue {
     constructor() {
-      this.items = [];
-      this.maxSize = 15;
+        this.maxSize = 15
+        this.items = [];
+        this.loadFromLocalStorage();
     }
-  
+
+    loadFromLocalStorage() {
+        const savedQueue = localStorage.getItem('myQueue');
+        this.items = savedQueue ? JSON.parse(savedQueue) : [];
+    }
+
     enqueue(item) {
         const currentSize = this.size();
-    
         if (currentSize < this.maxSize && this.items[currentSize - 1] !== item) {
             this.items.push(item);
+            this.saveToLocalStorage();
         } else if (currentSize === this.maxSize && this.items[currentSize - 1] !== item) {
             this.dequeue();
             this.items.push(item);
+            this.saveToLocalStorage();
         }
     }
+    
+    saveToLocalStorage() {
+        localStorage.setItem('myQueue', JSON.stringify(this.items));
+    }
+    
   
     dequeue() {
       if (this.isEmpty()) {
@@ -38,6 +50,7 @@ class FixedSizeQueue {
     }
   }
 const myQueue = new FixedSizeQueue();
+populateSidebar()
 
 
 // Call the function to populate the sidebar
@@ -102,16 +115,19 @@ window.addEventListener("beforeunload", function (e) {
 function populateSidebar() {
     var historyList = document.getElementById("historyList");
     historyList.innerHTML = "";
-    for (let i = 0; i < myQueue.size(); i++) {
+    const savedQueue = localStorage.getItem('myQueue');
+    const queueToShow = savedQueue ? JSON.parse(savedQueue) : [];
+    for (let i = 0; i < queueToShow.length; i++) {
         var listItem = document.createElement("li");
-        listItem.textContent = myQueue.showSelectedIndex(i);
+        listItem.textContent = queueToShow[i];
         listItem.classList.add("history-item");
         listItem.addEventListener("click", function () {
-            handleClick(myQueue.showSelectedIndex(i));
+            handleClick(queueToShow[i]);
         });
         historyList.appendChild(listItem);
     }
 }
+
 function handleClick(item) {
     editor.setValue(JSON.stringify(JSON.parse(item)))
     closeHistoryPanel()
