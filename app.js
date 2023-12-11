@@ -13,7 +13,8 @@ class FixedSizeQueue {
     enqueue(item) {
         const currentSize = this.size();
         if (currentSize < this.maxSize && this.items[currentSize - 1] !== item) {
-            this.items.push(item);
+            const object = { data : item, currentTime : new Date() }
+            this.items.push(object);
             this.saveToLocalStorage();
         } else if (currentSize === this.maxSize && this.items[currentSize - 1] !== item) {
             this.dequeue();
@@ -115,21 +116,40 @@ window.addEventListener("beforeunload", function (e) {
 function populateSidebar() {
     var historyList = document.getElementById("historyList");
     historyList.innerHTML = "";
+
     const savedQueue = localStorage.getItem('myQueue');
     const queueToShow = savedQueue ? JSON.parse(savedQueue) : [];
+
     for (let i = 0; i < queueToShow.length; i++) {
-        var listItem = document.createElement("li");
-        listItem.textContent = queueToShow[i];
-        listItem.classList.add("history-item");
-        listItem.addEventListener("click", function () {
-            handleClick(queueToShow[i]);
-        });
-        historyList.appendChild(listItem);
+
+        // Create a list item for the history item
+        var historyItem = document.createElement("li");
+        historyItem.textContent = queueToShow[i].data;
+        historyItem.classList.add("history-item");
+
+        // Append history item to the list
+        historyList.appendChild(historyItem);
+        // Create a list item for the date
+        var dateItem = document.createElement("li");
+        const constant = 'Saved Time'
+        const formattedDate = new Date(queueToShow[i].currentTime).toLocaleString()
+        dateItem.textContent = `${constant} - ${formattedDate}`;
+        dateItem.classList.add("history-date");
+
+        // Append date item to the list
+        historyList.appendChild(dateItem);
+
+        // Add click event listener
+        historyItem.addEventListener("click", function (item) {
+            return function () {
+                handleClick(item);
+            };
+        }(queueToShow[i]));
     }
 }
 
 function handleClick(item) {
-    editor.setValue(JSON.stringify(JSON.parse(item)))
+    editor.setValue(JSON.stringify(JSON.parse(item.data)))
     formatText(4)
     validState()
     closeHistoryPanel()
