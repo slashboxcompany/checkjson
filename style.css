@@ -161,7 +161,7 @@ img{
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 5;
+  z-index: 10;
   top: 0;
   right: 0;
   background-color: white; /* Background color */
@@ -174,22 +174,39 @@ img{
 }
 
 .sidenavcard {
-  background-color:#e4efc3; /* Set card background color */
-  border: 1px solid #ddd; /* Add a border around the card */
-  border-radius: 4px; /* Add rounded corners */
+  background-color: white; /* Set card background color */
   padding: 16px;
+}
+
+/* Add your desired styling for date items */
+.history-date {
+  border: 0px solid #c7c7c7 !important;
+  padding: 0 !important;
+  margin-top: -7px;
+  font-size: 11px;
+  padding-left: 109px !important;
+  font-style: italic;
+  color: #6b6b6b;
+  margin-bottom: 11px !important;
+  cursor: default !important;
+}
+
+.history-date:hover {
+  background-color: white !important;
+  color: none !important
 }
 
 .scrollable-list {
   padding: 0; 
   margin: 0; 
-  list-style-position: inside; 
+  font-family: monospace;
+  /* list-style-position: inside;  */
 } 
 
 .sidenav-list {
   position: fixed;
   overflow-y: scroll;
-  max-height: 525px;
+  max-height: 90%;
   padding: 0;
   margin: 0;
 }
@@ -199,11 +216,15 @@ img{
   margin: 0;
   text-align: center; 
   font-size: medium; 
+  display: inline-block;
+  margin-right: 28px;
 }
 
 .heading-container {
   background-color: #f7f7f7; /* Background color for the heading container */
   padding: 16px; /* Padding around the heading container */
+  display: flex;
+  justify-content: space-between;
 }
 
 .card {
@@ -239,10 +260,13 @@ img{
 
 #historyList li:hover {
   background-color: #f7f7f7;
+  background: var(--color-valid-background);
+  color: var(--color-valid-text);
+  border-color: var(--color-valid-border);
   cursor: pointer;
 }
 #historyList li {
-  width: 340px; /* Set a fixed width for each list item */
+  width: 301px; /* Set a fixed width for each list item */
   white-space: nowrap; /* Prevent text from wrapping */
   overflow: hidden; /* Hide content that overflows the fixed width */
   text-overflow: ellipsis; /* Show ellipsis for hidden content */
@@ -253,6 +277,9 @@ img{
 #historyList li {
   position: relative;
   padding-left: 20px;
+  color: #545454;
+  border: 1px solid #c7c7c7;
+  border-radius: 3px;
 }
 
 #historyList li:before {
@@ -261,7 +288,7 @@ img{
 }
 
 #historyList {
-  padding: 0; /* Optional: remove default padding */
+  padding: 12px; /* Optional: remove default padding */
 }
 
 #editorWrapper #editor {
@@ -277,8 +304,7 @@ img{
 
 .btn {
   background-color: var(--color-button-background);
-  padding: 4px 10px;
-  margin-top: 3px;
+  padding: 10px 15px;
   text-decoration: none;
   border: 1px solid var(--color-button-border);
   font-size: 14px;
@@ -288,26 +314,6 @@ img{
   cursor: pointer;
 }
 
-.closeBtn {
-  background-color: #f4f4f4;
-  padding: 4px 10px;
-  margin-top: 3px;
-  text-decoration: none;
-  border: 1px solid var(--color-button-border);
-  font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen-Sans, Ubuntu, Cantarell, helvetica neue, sans-serif;
-  font-weight: 700;
-  color: var(--color-button-text);
-  cursor: pointer;
-  position: fixed;
-  bottom: 10px;
-  right: 145px;
-}
-
-.closeBtn:hover {
-  background-color: var(--color-button-background-hover);
-  color: var(--color-button-text-hover)
-}
 
 .btn:hover {
   background-color: var(--color-button-background-hover);
@@ -348,3 +354,11 @@ button[type=compress]{
 .ace_gutter {
   /* padding: 4px 0; */
 }
+
+.close-btn {
+  cursor:pointer;
+  font-size: 41px;
+  font-weight: 100;
+  color: #000;
+}
+
