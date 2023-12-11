@@ -181,12 +181,12 @@ img{
 /* Add your desired styling for date items */
 .history-date {
   border: 0px solid #c7c7c7 !important;
+  color: #6b6b6b !important;
   padding: 0 !important;
   margin-top: -7px;
   font-size: 11px;
   padding-left: 109px !important;
   font-style: italic;
-  color: #6b6b6b;
   margin-bottom: 11px !important;
   cursor: default !important;
 }
@@ -266,12 +266,13 @@ img{
   cursor: pointer;
 }
 #historyList li {
-  width: 301px; /* Set a fixed width for each list item */
-  white-space: nowrap; /* Prevent text from wrapping */
-  overflow: hidden; /* Hide content that overflows the fixed width */
-  text-overflow: ellipsis; /* Show ellipsis for hidden content */
-  padding: 7px; /* Optional: add padding for better appearance */
-  margin-bottom: 7px; /* Optional: add margin between list items */
+  width: 301px;
+  white-space: normal;
+  overflow: hidden;
+  max-height: 91px;
+  text-overflow: ellipsis;
+  padding: 7px;
+  margin-bottom: 7px;
 }
 
 #historyList li {
@@ -360,5 +361,43 @@ button[type=compress]{
   font-size: 41px;
   font-weight: 100;
   color: #000;
+  margin-top: -3px;
 }
+
+.reset-button {
+  position: absolute;
+  bottom: 0;
+  padding: 17px;
+  left: 0%;
+  right: 0%;
+  text-align: center;
+}
+
+button[type=history]:hover{
+  background: var(--color-error-background);
+  color: var(--color-error-text);
+  border-color: var(--color-error-border);
+}
+
+.reset-button button:disabled {
+  background-color: #ffffff;
+  color: #888888;
+  border: 1px solid var(--color-button-border);
+  cursor: not-allowed;
+}
+
+.no-history-message {
+  color: #888888; /* Dark gray */
+  font-style: italic;
+  padding: 10px;
+  text-align: center;
+}
+
+.no-history-message:hover {
+  background-color: white !important;
+  color: #545454 !important;
+  cursor: not-allowed !important
+}
+
+
 

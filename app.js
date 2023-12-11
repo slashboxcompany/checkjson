@@ -8,18 +8,29 @@ class FixedSizeQueue {
     loadFromLocalStorage() {
         const savedQueue = localStorage.getItem('myQueue');
         this.items = savedQueue ? JSON.parse(savedQueue) : [];
+        this.setDeleteHistoryButton()
     }
 
     enqueue(item) {
         const currentSize = this.size();
-        if (currentSize < this.maxSize && this.items[currentSize - 1]['data'] !== item) {
+        if (this.items.length === 0 || (currentSize < this.maxSize && this.items[currentSize - 1].data !== item)) {
             const object = { data : item, currentTime : new Date() }
             this.items.push(object);
             this.saveToLocalStorage();
-        } else if (currentSize === this.maxSize && this.items[currentSize - 1]['data'] !== item) {
+            this.setDeleteHistoryButton()
+        } else if (currentSize === this.maxSize && this.items[currentSize - 1].data !== item) {
             this.dequeue();
             this.items.push(item);
             this.saveToLocalStorage();
+        }
+    }
+
+    setDeleteHistoryButton() {
+        var resetButton = document.getElementById('resetHistory');
+        if (this.items.length === 0) {
+            resetButton.disabled = true
+        } else {
+            resetButton.disabled = false
         }
     }
     
@@ -27,19 +38,12 @@ class FixedSizeQueue {
         localStorage.setItem('myQueue', JSON.stringify(this.items));
     }
     
-  
     dequeue() {
-      if (this.isEmpty()) {
-        return null;
-      }
-      return this.items.shift();
+        return this.isEmpty() ? null : this.items.shift();
     }
-  
+
     showSelectedIndex(i) {
-      if (this.isEmpty()) {
-        return null;
-      }
-      return this.items[i];
+        return this.isEmpty() ? null : this.items[i];
     }
   
     isEmpty() {
@@ -49,13 +53,9 @@ class FixedSizeQueue {
     size() {
       return this.items.length;
     }
-  }
+}
 const myQueue = new FixedSizeQueue();
 populateSidebar()
-
-
-// Call the function to populate the sidebar
-
 
 const editor = ace.edit("editor", {
     mode: "ace/mode/json",
@@ -78,7 +78,7 @@ const editor = ace.edit("editor", {
 editor.focus();
 editor.on("paste", e => {
     try {
-        returnOriginalValue(), e.text = JSON.stringify(JSON.parse(e.text), null, 4), validState()
+        returnOriginalValue(), e.text = JSON.stringify(JSON.parse(e.text), null, 4),validState()
     } catch (e) {
         error()
     }
@@ -100,12 +100,21 @@ const clearText = () => {
             theme: 'ace/theme/tomorrow_night'
         })
     },
+    resetLocalStorage = () => {
+        localStorage.removeItem('myQueue');
+        myQueue.loadFromLocalStorage()
+        var historyList = document.getElementById("historyList");
+        historyList.innerHTML = "";
+        setNoHistoryMessage()
+        closeHistoryPanel()
+    },
     returnOriginalValue = () => {
         document.getElementById("error").style.display = "none", document.getElementById("valid-state").style.display = "none"
     };
 document.getElementById("minify").addEventListener("click", () => formatText()),
 document.getElementById("beautify").addEventListener("click", () => formatText(4)),
 document.getElementById("clear").addEventListener("click", () => clearText());
+document.getElementById("resetHistory").addEventListener("click", () => resetLocalStorage());
 window.addEventListener("beforeunload", function (e) {
     var confirmationMessage = "\o/";
 
@@ -120,9 +129,11 @@ function populateSidebar() {
     const savedQueue = localStorage.getItem('myQueue');
     const queueToShow = savedQueue ? JSON.parse(savedQueue) : [];
 
-    for (let i = 0; i < queueToShow.length; i++) {
-
-        // Create a list item for the history item
+    if (queueToShow.length === 0) {
+        setNoHistoryMessage()
+    } else {
+        // History records found, populate the sidebar
+        for (let i = 0; i < queueToShow.length; i++) {
         var historyItem = document.createElement("li");
         historyItem.textContent = queueToShow[i].data;
         historyItem.classList.add("history-item");
@@ -139,14 +150,26 @@ function populateSidebar() {
         // Append date item to the list
         historyList.appendChild(dateItem);
 
-        // Add click event listener
-        historyItem.addEventListener("click", function (item) {
-            return function () {
-                handleClick(item);
-            };
-        }(queueToShow[i]));
+            // Add click event listener
+            historyItem.addEventListener("click", function (item) {
+                return function () {
+                    handleClick(item);
+                };
+            }(queueToShow[i]));
+        }
     }
 }
+
+function setNoHistoryMessage () {
+    var historyList = document.getElementById("historyList");
+    historyList.innerHTML = "";
+    // No history records found, display a message
+    var noHistoryMessage = document.createElement("li");
+    noHistoryMessage.textContent = "No history records found.";
+    noHistoryMessage.classList.add("no-history-message");
+    historyList.appendChild(noHistoryMessage);
+}
+
 
 function handleClick(item) {
     editor.setValue(JSON.stringify(JSON.parse(item.data)))
@@ -178,7 +201,6 @@ function toggleHistoryPanel(event) {
         openHistoryPanel();
     }
 
-    // Prevent the click event from propagating further (e.g., to the document click listener)
     event.stopPropagation();
 }
 
