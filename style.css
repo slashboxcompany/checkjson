@@ -157,6 +157,76 @@ img{
   }
 }
 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  background-color: white; /* Background color */
+  overflow-x: hidden;
+  transition: 0.2s; /*transition for smooth open/close effect */
+  border-color: aliceblue;
+  border: 1px solid var(--color-nav-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.sidenavcard {
+  background-color: white; /* Set card background color */
+  padding: 16px;
+}
+
+/* Add your desired styling for date items */
+.history-date {
+  border: 0px solid #c7c7c7 !important;
+  padding: 0 !important;
+  margin-top: -7px;
+  font-size: 11px;
+  padding-left: 109px !important;
+  font-style: italic;
+  color: #6b6b6b;
+  margin-bottom: 11px !important;
+  cursor: default !important;
+}
+
+.history-date:hover {
+  background-color: white !important;
+  color: none !important
+}
+
+.scrollable-list {
+  padding: 0; 
+  margin: 0; 
+  font-family: monospace;
+  /* list-style-position: inside;  */
+} 
+
+.sidenav-list {
+  position: fixed;
+  overflow-y: scroll;
+  max-height: 90%;
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav h2 {
+  color: #070707;
+  margin: 0;
+  text-align: center; 
+  font-size: medium; 
+  display: inline-block;
+  margin-right: 28px;
+}
+
+.heading-container {
+  background-color: #f7f7f7; /* Background color for the heading container */
+  padding: 16px; /* Padding around the heading container */
+  display: flex;
+  justify-content: space-between;
+}
+
 .card {
   width: 97%;
 }
@@ -188,6 +258,39 @@ img{
   }
 }
 
+#historyList li:hover {
+  background-color: #f7f7f7;
+  background: var(--color-valid-background);
+  color: var(--color-valid-text);
+  border-color: var(--color-valid-border);
+  cursor: pointer;
+}
+#historyList li {
+  width: 301px; /* Set a fixed width for each list item */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide content that overflows the fixed width */
+  text-overflow: ellipsis; /* Show ellipsis for hidden content */
+  padding: 7px; /* Optional: add padding for better appearance */
+  margin-bottom: 7px; /* Optional: add margin between list items */
+}
+
+#historyList li {
+  position: relative;
+  padding-left: 20px;
+  color: #545454;
+  border: 1px solid #c7c7c7;
+  border-radius: 3px;
+}
+
+#historyList li:before {
+  position: absolute;
+  left: 0;
+}
+
+#historyList {
+  padding: 12px; /* Optional: remove default padding */
+}
+
 #editorWrapper #editor {
   font-family: monospace;
   font-size: 15px;
@@ -210,6 +313,7 @@ img{
   color: var(--color-button-text);
   cursor: pointer;
 }
+
 
 .btn:hover {
   background-color: var(--color-button-background-hover);
@@ -250,3 +354,11 @@ button[type=compress]{
 .ace_gutter {
   /* padding: 4px 0; */
 }
+
+.close-btn {
+  cursor:pointer;
+  font-size: 41px;
+  font-weight: 100;
+  color: #000;
+}
+
