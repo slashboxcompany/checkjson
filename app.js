@@ -1,6 +1,6 @@
 class FixedSizeQueue {
     constructor() {
-        this.maxSize = 15
+        this.maxSize = 100
         this.items = [];
         this.loadFromLocalStorage();
     }
@@ -12,11 +12,11 @@ class FixedSizeQueue {
 
     enqueue(item) {
         const currentSize = this.size();
-        if (currentSize < this.maxSize && this.items[currentSize - 1] !== item) {
+        if (currentSize < this.maxSize && this.items[currentSize - 1]['data'] !== item) {
             const object = { data : item, currentTime : new Date() }
             this.items.push(object);
             this.saveToLocalStorage();
-        } else if (currentSize === this.maxSize && this.items[currentSize - 1] !== item) {
+        } else if (currentSize === this.maxSize && this.items[currentSize - 1]['data'] !== item) {
             this.dequeue();
             this.items.push(item);
             this.saveToLocalStorage();
