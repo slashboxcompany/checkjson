@@ -222,7 +222,7 @@ img{
 
 .heading-container {
   background-color: #f7f7f7; /* Background color for the heading container */
-  padding: 16px; /* Padding around the heading container */
+  padding: 9px; /* Padding around the heading container */
   display: flex;
   justify-content: space-between;
 }
@@ -330,6 +330,11 @@ button[type=reset]{
   margin-top:20px;
 }
 
+button[type=close]{
+  background-color: #f4f4f4;
+  margin-left:3px;
+}
+
 .compress{
   float: right;
 }
@@ -396,7 +401,13 @@ button[type=history]:hover{
 .no-history-message:hover {
   background-color: white !important;
   color: #545454 !important;
-  cursor: not-allowed !important
+  cursor:auto !important
+}
+
+.history-heading{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 
