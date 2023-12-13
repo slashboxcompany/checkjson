@@ -90,6 +90,8 @@ editor.on("paste", e => {
     try {
         returnOriginalValue();
         e.text = JSON.stringify(JSON.parse(e.text), null, 4);
+        myQueue.enqueue(e.text);
+        populateSidebar();
         validState();
     } catch (e) {
         error();
