@@ -410,5 +410,12 @@ button[type=history]:hover{
   align-items: center !important;
 }
 
+.lastHistory{
+  font-style: italic;
+  font-size: 12px;
+  margin-left: 11px;
+  color: #696969;
+}
+
 
 
