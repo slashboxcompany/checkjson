@@ -31,7 +31,7 @@ class FixedSizeQueue {
     }
 
     saveToLocalStorage() {
-        localStorage.setItem('myQueue', JSON.stringify(this.items));
+        localStorage.setItem('myQueue', JSON.stringify(this.items.splice(0, 10)));
     }
 
     dequeue() {
