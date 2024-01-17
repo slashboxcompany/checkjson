@@ -31,7 +31,8 @@ class FixedSizeQueue {
     }
 
     saveToLocalStorage() {
-        localStorage.setItem('myQueue', JSON.stringify(this.items.splice(0, 10)));
+        if (this.items.length > 10) this.items.splice(0,this.items.length - 10)
+        localStorage.setItem('myQueue', JSON.stringify(this.items));
     }
 
     dequeue() {
@@ -151,7 +152,7 @@ function populateSidebar() {
     historyList.innerHTML = "";
 
     const savedQueue = localStorage.getItem('myQueue');
-    const queueToShow = savedQueue ? JSON.parse(savedQueue) : [];
+    const queueToShow = savedQueue ? JSON.parse(savedQueue).reverse() : [];
 
     if (queueToShow.length === 0) {
         setNoHistoryMessage();
