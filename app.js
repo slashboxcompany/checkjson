@@ -66,6 +66,21 @@ const editor = ace.edit("editor", {
     fontSize: 14
 });
 
+// Function to prevent default scrolling
+const preventScroll = (event) => {
+    event.preventDefault();
+};
+
+// Disable scrolling when the cursor is over the editor
+editor.addEventListener('mouseenter', () => {
+    window.addEventListener('wheel', preventScroll, { passive: false });
+});
+
+// Enable scrolling back when the cursor leaves the editor
+editor.addEventListener('mouseleave', () => {
+    window.removeEventListener('wheel', preventScroll);
+});
+
 function formatText(e = 0) {
     try {
         returnOriginalValue();
