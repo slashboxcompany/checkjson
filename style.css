@@ -525,7 +525,7 @@ button[type=history]:hover{
 .interviewally-banner-static {
   width: 100%;
   background: linear-gradient(90deg, #fff7ed 70%, #f97316 120%);
-  border: 1px solid #f97316;
+  /* border: 1px solid #f97316; */
   border-radius: 7px;
   margin: 14px 0 14px 0;
   box-shadow: 0 2px 8px rgba(249, 115, 22, 0.08);
@@ -548,14 +548,14 @@ button[type=history]:hover{
   gap: 12px;
 }
 .interviewally-logo {
-  width: 55px;
-  height: 55px;
-  margin-right: 16px;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.10);
-  border: 2px solid #FDBA74;
-  margin-left: 10px;
+      width: 68px;
+    height: 68px;
+    margin-right: 16px;
+    border-radius: 8px;
+    /* background: #fff; */
+    /* box-shadow: 0 2px 8px rgba(249, 115, 22, 0.10); */
+    /* border: 2px solid #FDBA74; */
+    margin-left: 10px;
 }
 .interviewally-texts {
   display: flex;
@@ -681,25 +681,35 @@ button[type=history]:hover{
 
 /* InterviewAlly Text Styles */
 .ia-title {
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-  font-size: 1.13em;
-  font-weight: 900;
-  color: #f97316;
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 2px #fffbe7;
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #ff6a1a;
+  letter-spacing: 0.8px;
+  text-shadow: 0 3px 8px rgba(230, 81, 0, 0.3);
+  text-transform: none;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff6a1a 50%, #ff6a1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: normal;
 }
 .ia-sep {
-  font-size: 1.1em;
-  color: #FDBA74;
-  font-weight: 700;
-  margin: 0 3px 0 2px;
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.2em;
+  color: #ff8a50;
+  font-weight: 600;
+  margin: 0 4px 0 3px;
+  font-style: normal;
 }
 .ia-desc {
-  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', Arial, sans-serif;
   font-size: 1em;
-  color: #f97316;
+  color: #ff6a1a;
   font-weight: 600;
-  letter-spacing: 0.1px;
+  letter-spacing: 0.2px;
+  font-style: italic;
+  text-shadow: 0 1px 3px rgba(230, 81, 0, 0.2);
 }
 .ia-highlight {
   color: #f97316;
@@ -710,14 +720,14 @@ button[type=history]:hover{
 }
 @media (max-width: 600px) {
   .ia-title {
-    font-size: 1em;
+    font-size: 1.4em;
   }
   .ia-sep {
-    font-size: 1em;
-    margin: 0 2px 0 1px;
+    font-size: 1.1em;
+    margin: 0 3px 0 2px;
   }
   .ia-desc {
-    font-size: 0.93em;
+    font-size: 1em;
   }
   .ia-highlight {
     font-size: 0.93em;
