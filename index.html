@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="Check Json">
     <meta name="description" content="Check Json">
-    <meta name="keywords" content="json, check json, json checker, jsonlint, json compare, json formatter, format json, validate json, compress json">
+    <meta name="keywords"
+        content="json, check json, json checker, jsonlint, json compare, json formatter, format json, validate json, compress json">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
@@ -28,16 +29,16 @@
     <nav>
         <div class="logo">
             <div class="dev-tools-logo">JSON</div>
-            <p><b class="heading">JSONChecker</b><span>  - Check Your JSON</span></p>
+            <p><b class="heading">JSONChecker</b><span> - Check Your JSON</span></p>
         </div>
         <div class="side-button">
-            <button class="btn"  id="history">History</button>
+            <button class="btn" id="history">History</button>
         </div>
         <!-- <div class="side-button">
             <button onclick="changeThemeToDark()">Darkmode</button>
         </div> -->
     </nav>
-    <div  class="sidenav" id="historyPanel">
+    <div class="sidenav" id="historyPanel">
         <div class="heading-container">
             <button class="btn" type="close" id="closeBtn">close</button>
             <h2 class="history-heading">History</h2>
@@ -45,16 +46,31 @@
         <p class="lastHistory">*Limit for stored histories is configured to 10 for now.</p>
         <div class="sidenav-list">
             <div>
-                 <!-- Ordered list for list items -->
-                 <ol class="scrollable-list sidenavcard" id="historyList"></ol>
+                <!-- Ordered list for list items -->
+                <ol class="scrollable-list sidenavcard" id="historyList"></ol>
             </div>
         </div>
         <div class="reset-button">
             <button class="btn" type="history" id="resetHistory">Delete all history</button>
         </div>
     </div>
+
+    <!-- banner here -->
     <div class="card">
         <div class="card-body">
+            <!-- InterviewAlly Banner Start -->
+            <div class="interviewally-banner-static">
+                <a href="https://interviewally.tech/" target="_blank" rel="noopener" class="interviewally-banner-link">
+                    <img src="./assets/logo.svg" alt="InterviewAlly Logo" class="interviewally-logo" />
+                    <div class="interviewally-texts">
+                        <!-- <div class="interviewally-title"><strong>InterviewAlly</strong></div> -->
+                        <div class="interviewally-tagline"><strong style="font-size:1.18em;letter-spacing:0.5px;font-weight:900;">InterviewAlly&nbsp;|</strong> Your invisible interview assistant</div>
+                        <div class="interviewally-support">An AI assistant that helps you in real interviews—completely invisible during screen sharing. Ace your next interview with confidence!</div>
+                        <div class="interviewally-cta">🚀 <strong>Try the application for <span style='color:#f97316'>FREE</span> today!</strong></div>
+                    </div>
+                </a>
+            </div>
+            <!-- InterviewAlly Banner End -->
             <div class="form-group">
                 <div id="editorWrapper">
                     <div id="editor"></div>
@@ -101,4 +117,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.6/ace.js"></script>
     <script src="app.js" async defer></script>
 </body>
+
 </html>

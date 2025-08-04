@@ -417,5 +417,202 @@ button[type=history]:hover{
   color: #696969;
 }
 
+/* InterviewAlly Banner Styles */
+.interviewally-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: #fff7ed;
+  border-top: 1px solid #f97316;
+  box-shadow: 0 -2px 12px rgba(249, 115, 22, 0.07);
+  text-decoration: none;
+  transition: background 0.2s;
+  padding: 0;
+  margin-top:0;
+}
+.interviewally-banner:hover {
+  background: #fff3e0;
+}
+.interviewally-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 12px 16px 10px 16px;
+}
+.interviewally-logo {
+  width: 38px;
+  height: 38px;
+  margin-right: 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.08);
+}
+.interviewally-title {
+  font-size: 1.25em;
+  color: #232629;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+.interviewally-tagline {
+  font-size: 1.08em;
+  color: #f97316;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.interviewally-support {
+  font-size: 0.98em;
+  color: #444;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  opacity: 0.85;
+  margin-bottom: 2px;
+}
+.interviewally-cta {
+  font-size: 1.05em;
+  color: #1a8917;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  margin-top: 4px;
+  background: #fffbe7;
+  border-radius: 5px;
+  padding: 3px 10px;
+  display: inline-block;
+  box-shadow: 0 1px 4px rgba(249, 115, 22, 0.07);
+}
+.interviewally-banner-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 14px 18px 12px 18px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .interviewally-banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 8px 8px 8px;
+  }
+  .interviewally-logo {
+    margin-right: 0;
+    margin-bottom: 7px;
+  }
+  .interviewally-title {
+    font-size: 1.08em;
+  }
+  .interviewally-tagline {
+    font-size: 1em;
+  }
+  .interviewally-support {
+    font-size: 0.93em;
+  }
+  .interviewally-cta {
+    font-size: 0.98em;
+    padding: 3px 7px;
+  }
+}
+
+/* InterviewAlly Banner (Static, In-Page) */
+.interviewally-banner-static {
+  width: 100%;
+  background: linear-gradient(90deg, #fff7ed 70%, #f97316 120%);
+  border: 1px solid #f97316;
+  border-radius: 7px;
+  margin: 14px 0 14px 0;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  min-height: unset;
+  margin-top:0;
+}
+.interviewally-banner-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 7px 14px 7px 14px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.interviewally-logo {
+  width: 38px;
+  height: 38px;
+  margin-right: 16px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.10);
+  border: 2px solid #FDBA74;
+}
+.interviewally-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+}
+.interviewally-title {
+  font-size: 1.13em;
+  color: #232629;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+.interviewally-tagline {
+  font-size: 1em;
+  color: #f97316;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.interviewally-support {
+  font-size: 0.95em;
+  color: #444;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  opacity: 0.85;
+  margin-bottom: 0;
+}
+.interviewally-cta {
+  font-size: 1em;
+  color: #fff;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+  margin-top: 3px;
+  background: linear-gradient(90deg, #f97316 60%, #FDBA74 100%);
+  border-radius: 4px;
+  padding: 2px 10px;
+  display: inline-block;
+  box-shadow: 0 1px 4px rgba(249, 115, 22, 0.10);
+  letter-spacing: 0.2px;
+}
+.interviewally-cta span {
+  color: #fffbe7 !important;
+}
+.interviewally-banner-link:hover .interviewally-title {
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .interviewally-banner-link {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 7px 6px 7px 6px;
+    gap: 5px;
+  }
+  .interviewally-logo {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .interviewally-title, .interviewally-tagline, .interviewally-support, .interviewally-cta {
+    font-size: 0.98em;
+  }
+}
+
 
 
