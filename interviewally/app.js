@@ -13,12 +13,12 @@ const uniqueRand = (min, max, prev) => {
 }
 
 const combinations = [
-  { configuration: 1, roundness: 1 },
-  { configuration: 1, roundness: 2 },
-  { configuration: 1, roundness: 4 },
-  { configuration: 2, roundness: 2 },
-  { configuration: 2, roundness: 3 },
-  { configuration: 3, roundness: 3 }
+  { configuration: 1, roundness: 1, colorScheme: 'primary' },
+  { configuration: 1, roundness: 2, colorScheme: 'secondary' },
+  { configuration: 1, roundness: 4, colorScheme: 'accent' },
+  { configuration: 2, roundness: 2, colorScheme: 'primary' },
+  { configuration: 2, roundness: 3, colorScheme: 'accent' },
+  { configuration: 3, roundness: 3, colorScheme: 'secondary' }
 ];
 
 let prev = 0;
@@ -30,6 +30,7 @@ const shapeInterval = setInterval(() => {
   
   wrapper.dataset.configuration = combination.configuration;
   wrapper.dataset.roundness = combination.roundness;
+  wrapper.dataset.colorScheme = combination.colorScheme;
   
   prev = index;
 }, 800);
@@ -64,6 +65,6 @@ setTimeout(() => {
   
   // After fade out completes, redirect directly to website
   setTimeout(() => {
-    window.location.href = 'https://interviewally.tech';
+    window.location.href = 'https://interviewally.tech/';
   }, 1000);
 }, 5000); // Show splash for 4 seconds
