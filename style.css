@@ -538,6 +538,41 @@ button[type=history]:hover{
   animation: none !important;
   position: relative;
 }
+
+/* Close button for InterviewAlly banner */
+.banner-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.banner-close-btn:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #333;
+  transform: scale(1.1);
+}
+
+.banner-close-btn:active {
+  transform: scale(0.95);
+}
+
+.banner-close-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
 .interviewally-banner-link {
   display: flex;
   align-items: center;

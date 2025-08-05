@@ -156,6 +156,12 @@ document.getElementById("beautify").addEventListener("click", () => formatText(4
 document.getElementById("clear").addEventListener("click", clearText);
 document.getElementById("resetHistory").addEventListener("click", resetLocalStorage);
 
+// Close banner functionality
+document.getElementById("closeBannerBtn").addEventListener("click", function() {
+    const banner = document.getElementById("interviewally-banner");
+    banner.style.display = "none";
+});
+
 window.addEventListener("beforeunload", function (e) {
     const confirmationMessage = "\o/";
     (e || window.event).returnValue = confirmationMessage;
